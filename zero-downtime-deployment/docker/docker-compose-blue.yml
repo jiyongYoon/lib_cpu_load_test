@@ -1,0 +1,10 @@
+version: '3'
+services:
+  blue:
+    container_name: blue
+    image: blue
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 80:8081

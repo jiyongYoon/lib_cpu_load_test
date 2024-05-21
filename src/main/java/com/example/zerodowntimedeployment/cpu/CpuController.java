@@ -1,4 +1,4 @@
-package com.example.cpuloadtest;
+package com.example.zerodowntimedeployment.cpu;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping("/cpu")
-public class Controller {
+public class CpuController {
 
     @GetMapping("/{count}")
     public void cpuLoadTest(@PathVariable Integer count) throws InterruptedException {
