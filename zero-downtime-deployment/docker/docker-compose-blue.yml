@@ -4,7 +4,7 @@ services:
     container_name: blue
     image: blue
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ../..
+      dockerfile: zero-downtime-deployment/docker/Dockerfile
     ports:
       - 80:8081

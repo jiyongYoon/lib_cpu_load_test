@@ -31,7 +31,7 @@ ARG APP_HOME=/app
 WORKDIR $APP_HOME
 
 # 9. 빌드된 JAR 파일을 복사
-COPY --from=builder $APP_HOME/build/libs/cpu-load-test-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=builder $APP_HOME/build/libs/zero-downtime-deployment-test-0.0.1-SNAPSHOT.jar app.jar
 
 # 10. 애플리케이션 실행
 ENTRYPOINT ["java", "-jar", "app.jar"]
