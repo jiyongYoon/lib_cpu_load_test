@@ -20,7 +20,8 @@ RUN gradle dependencies  --info
 COPY $PROJECT_DIR/ ./
 COPY $SRC_DIR ./src
 
-# 6. 프로젝트 빌드
+# 6. Build-time argument 세팅 및 프로젝트 빌드
+ARG ACTIVE_PROFILE
 RUN gradle build --info
 
 # 7. 경량화된 JDK 이미지로 전환
@@ -34,4 +35,4 @@ WORKDIR $APP_HOME
 COPY --from=builder $APP_HOME/build/libs/zero-downtime-deployment-test-0.0.1-SNAPSHOT.jar app.jar
 
 # 10. 애플리케이션 실행
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "-Dspring.profiles.active=${ACTIVE_PROFILE}", "app.jar"]

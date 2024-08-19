@@ -1,0 +1,12 @@
+version: '3.6'
+services:
+  green:
+    container_name: green
+    image: green
+    build:
+      context: ../..
+      dockerfile: ../docker/Dockerfile
+    environment:
+      - ACTIVE_PROFILE=green
+    ports:
+      - 8080:8080

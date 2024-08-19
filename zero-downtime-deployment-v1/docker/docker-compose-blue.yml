@@ -1,0 +1,12 @@
+version: '3.6'
+services:
+  blue:
+    container_name: blue
+    image: blue
+    build:
+      context: ../..
+      dockerfile: ../docker/Dockerfile
+    environment:
+      - ACTIVE_PROFILE=blue
+    ports:
+      - 8081:8081
