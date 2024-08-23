@@ -28,7 +28,7 @@ fi
 echo -e "New $NEW_PORT\n"
 
 # docker pull & run
-echo -e "\n## new docker build & run ##\n"
+echo -e "## new docker build & run ##\n"
 docker-compose -f ./docker/$NEW_DOCKER_COMPOSE_NAME up --build -d
 
 # NGINX 설정 파일 수정

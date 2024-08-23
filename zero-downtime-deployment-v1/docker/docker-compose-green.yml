@@ -5,7 +5,7 @@ services:
     image: green
     build:
       context: ../..
-      dockerfile: ../docker/Dockerfile
+      dockerfile: ./zero-downtime-deployment-v1/docker/Dockerfile
     environment:
       - ACTIVE_PROFILE=green
     ports:
