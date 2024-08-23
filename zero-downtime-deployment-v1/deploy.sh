@@ -29,7 +29,8 @@ echo -e "New $NEW_PORT\n"
 
 # docker pull & run
 echo -e "## new docker build & run ##\n"
-docker-compose -f ./docker/$NEW_DOCKER_COMPOSE_NAME up --build -d
+#docker-compose -f ./docker/$NEW_DOCKER_COMPOSE_NAME up --build -d # 코드가 바뀌는 버전업 배포라면 매번 새롭게 빌드
+docker-compose -f ./docker/$NEW_DOCKER_COMPOSE_NAME up -d
 
 # NGINX 설정 파일 수정
 echo -e "## Nginx 설정 수정 & restart ##\n"

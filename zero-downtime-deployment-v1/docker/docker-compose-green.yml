@@ -1,4 +1,3 @@
-version: '3.6'
 services:
   green:
     container_name: green
@@ -10,3 +9,5 @@ services:
       - ACTIVE_PROFILE=green
     ports:
       - 8080:8080
+#    expose:
+#      - 8080
