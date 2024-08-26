@@ -1,0 +1,18 @@
+services:
+  green-server:
+    image: green
+    build:
+      context: ../..
+      dockerfile: ./zero-downtime-deployment-v2/docker/Dockerfile
+    environment:
+      - ACTIVE_PROFILE=green
+#    ports:
+#      - 8080:8080
+    expose:
+      - 8080
+    networks:
+      - green-network
+
+networks:
+  green-network:
+    external: true

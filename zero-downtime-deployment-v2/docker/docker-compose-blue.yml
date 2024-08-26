@@ -1,0 +1,18 @@
+services:
+  blue-server:
+    image: blue
+    build:
+      context: ../..
+      dockerfile: ./zero-downtime-deployment-v2/docker/Dockerfile
+    environment:
+      - ACTIVE_PROFILE=blue
+#    ports:
+#      - 8080:8080
+    expose:
+      - 8080
+    networks:
+      - blue-network
+
+networks:
+  blue-network:
+    external: true
